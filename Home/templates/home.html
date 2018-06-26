@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gestão Produtos - Desenvolva uma aplicação com Django 2.0 e deploy no Heroku</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.1/spacelab/bootstrap.min.css" rel="stylesheet" integrity="sha384-TgQmpeh1IG9vQ1WxIzpdfm5FX08N4+Nr5uzpgqvZAKQwWems+NIMmOVIMFxGq6EZ" crossorigin="anonymous">
+    <link href="https://bootswatch.com/_assets/css/custom.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark fixed-top  bg-dark">
+              <a class="navbar-brand" href="#">Gestão de Produtos</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation" style="">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+              <div class="collapse navbar-collapse" id="navbarColor03">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home' %}">Home</a>
+                  </li>
+                </ul>
+              </div>
+        </nav>
+
+
+          <div class="jumbotron" style="padding: 4rem 2rem 3rem 2rem;">
+            <h1 class="display-3">Gestão de Produtos</h1>
+            <p class="lead">Esse é o projeto final de exercício do curso Desenvolva uma aplicação com Django 2.0 e deploy no Heroku</p>
+            <hr class="my-4">
+              <div class="row">
+                  <div class="col-lg-6">
+                      <p><strong>Professor: </strong>Gregory Pacheco</p>
+                      <p><strong>Aluno: </strong>Matheus Resplandes</p>
+
+                  </div>
+
+
+                  <div class="col-lg-6">
+                      {% if user.is_authenticated %}
+                      <h5 class="text-right" style="padding: 1rem 1rem;">
+                          <a href="{% url 'produtos_home' %}" class="nav-link">Entrar <i class="fas fa-angle-double-right"></i></a>
+                      </h5>
+                      {% else %}
+                      <h5 class="text-right" style="padding: 1rem 1rem;">
+                          <a href="{% url 'login' %}" class="nav-link">Faça seu login <i class="fas fa-sign-in-alt"></i></a>
+                      </h5>
+                      {% endif %}
+                  </div>
+
+              </div>
+          </div>
+
+
+        <footer id="footer" style="margin: 3em 0;">
+            <div class="row">
+              <div class="col-lg-12">
+
+                <ul class="list-unstyled">
+                  <li><a href="{% url 'home' %}">Home</a></li>
+                  <li><a href="#">RSS</a></li>
+                  <li><a href="#">Twitter</a></li>
+                </ul>
+                <p>Desenvolvido por <a href="http://roxsites.com.br">Matheus Resplandes</a>.</p>
+                <p>Baseado no <a href="https://getbootstrap.com" rel="nofollow">Bootstrap</a>. Icones do <a href="http://fontawesome.io/" rel="nofollow">Font Awesome</a>. Web fonts do <a href="https://fonts.google.com/" rel="nofollow">Google</a>.</p>
+
+              </div>
+            </div>
+
+          </footer>
+        </div>
+
+
+    </div>
+
+
+    <script src="https://bootswatch.com/_vendor/jquery/dist/jquery.min.js"></script>
+    <script src="https://bootswatch.com/_vendor/popper.js/dist/umd/popper.min.js"></script>
+    <script src="https://bootswatch.com/_vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="https://bootswatch.com/_assets/js/custom.js"></script>
+</body>
+</html>

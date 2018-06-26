@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Deletar Produto  {{ person.first_name }} {% endblock %}
+{% block principal %}
+  <h3>Deletar produto</h3>
+
+    <div class="card border-danger mb-3">
+                <div class="card-body">
+                    <h4 class="card-title">Tem certeza que deseja excluir o produto {{ produto.produto_nome }}?</h4>
+                    <p class="text-center"><img src="{% url 'home' %}media/{{ produto.foto }}" width="250px"></img></p>
+                </div>
+    </div>
+
+    <form method="POST" enctype="multipart/form-data" class="text-center">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Sim</button>
+    </form>
+
+
+
+{% endblock %}
