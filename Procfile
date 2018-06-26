@@ -1,1 +1,1 @@
-web: gunicorn gestao_produtos.wsgi --log-file -
+web: gunicorn Gestao_Produtos.wsgi --log-file -
