@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% static "" as baseUrl %}
 {% block title %} Produtos {% endblock %}
 {% block principal %}
   <h3>Produtos</h3>
@@ -26,7 +27,7 @@
           <td><a href="{% url 'produto_atualiza' item.id %}" class="nav-link">{{ item.produto_marca }}</a></td>
           <td><a href="{% url 'produto_atualiza' item.id %}" class="nav-link">{{ item.quantidade }}</a></td>
           <td><a href="{% url 'produto_atualiza' item.id %}" class="nav-link">{{ item.valor }}</a></td>
-          <td><a href="../media/{{ item.foto }}"><img src="../media/{{ item.foto }}" width="50px"></img></a></td>
+          <td><a href="{{ baseUrl }}{{ item.foto }}"><img src="{{ baseUrl }}{{ item.foto }}" width="50px"></img></a></td>
           <td>
               <a href="{% url 'produto_deleta' item.id %}" class="trash-item">
                   <i class="fa fa-trash" aria-hidden="true"></i>
