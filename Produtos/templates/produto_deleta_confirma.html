@@ -8,7 +8,7 @@
     <div class="card border-danger mb-3">
                 <div class="card-body">
                     <h4 class="card-title">Tem certeza que deseja excluir o produto {{ produto.produto_nome }}?</h4>
-                    <p class="text-center"><img src="{% url 'home' %}media/{{ produto.foto }}" width="250px"></img></p>
+                    <p class="text-center"><img src="{{ baseUrl }}{{ produto.foto }}" width="250px"></img></p>
                 </div>
     </div>
 
